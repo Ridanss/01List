@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace p02
         public Form2()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt32(textBoxN.Text);
+            int k = Convert.ToInt32(textBoxK.Text);
+            List<int> list = new List<int>();
+            Random rnd = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                list.Add(rnd.Next(-4, 21));
+            }
+            library.Vypis(list, listBox1);
         }
     }
 }
