@@ -17,7 +17,22 @@ namespace ClassLibrary1
             }
         }
 
-        public static List<int> Smazani(List<int> list)
+        public static List<int> SmazaniLambda(List<int> list, int k)
+        {
+            list.RemoveAll(a => a == k);
+            return list;
+        }
+
+        public static List<int> Smazani(List<int> list, int k)
+        {
+            while (list.Contains(k))
+            {
+                list.Remove(k);
+            }
+            return list;
+        }
+
+        public static void DruheMaximum(out int max, out int maxI, List<int> list)
         {
 
         }

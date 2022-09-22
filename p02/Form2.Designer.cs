@@ -35,6 +35,8 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonLambda = new System.Windows.Forms.Button();
+            this.buttonNoLambda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -97,11 +99,31 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "k:";
             // 
+            // buttonLambda
+            // 
+            this.buttonLambda.Location = new System.Drawing.Point(86, 138);
+            this.buttonLambda.Name = "buttonLambda";
+            this.buttonLambda.Size = new System.Drawing.Size(75, 23);
+            this.buttonLambda.TabIndex = 7;
+            this.buttonLambda.Text = "Lambda";
+            this.buttonLambda.UseVisualStyleBackColor = true;
+            // 
+            // buttonNoLambda
+            // 
+            this.buttonNoLambda.Location = new System.Drawing.Point(86, 167);
+            this.buttonNoLambda.Name = "buttonNoLambda";
+            this.buttonNoLambda.Size = new System.Drawing.Size(75, 23);
+            this.buttonNoLambda.TabIndex = 8;
+            this.buttonNoLambda.Text = "NoLambda";
+            this.buttonNoLambda.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonNoLambda);
+            this.Controls.Add(this.buttonLambda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox2);
@@ -125,6 +147,8 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonLambda;
+        private System.Windows.Forms.Button buttonNoLambda;
     }
 }
 

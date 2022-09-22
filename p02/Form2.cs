@@ -29,6 +29,9 @@ namespace p02
                 list.Add(rnd.Next(-4, 21));
             }
             library.Vypis(list, listBox1);
+            library.SmazaniLambda(list, k);
+            library.Smazani(list, k);
+            library.DruheMaximum(out int max, out int maxI, list);
         }
     }
 }
