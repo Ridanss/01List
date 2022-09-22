@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLambda = new System.Windows.Forms.Button();
             this.buttonNoLambda = new System.Windows.Forms.Button();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button1
@@ -68,7 +69,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(228, 51);
+            this.listBox1.Location = new System.Drawing.Point(192, 51);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 3;
@@ -76,7 +77,7 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(354, 51);
+            this.listBox2.Location = new System.Drawing.Point(86, 225);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(120, 95);
             this.listBox2.TabIndex = 4;
@@ -101,27 +102,38 @@
             // 
             // buttonLambda
             // 
-            this.buttonLambda.Location = new System.Drawing.Point(86, 138);
+            this.buttonLambda.Location = new System.Drawing.Point(86, 196);
             this.buttonLambda.Name = "buttonLambda";
             this.buttonLambda.Size = new System.Drawing.Size(75, 23);
             this.buttonLambda.TabIndex = 7;
             this.buttonLambda.Text = "Lambda";
             this.buttonLambda.UseVisualStyleBackColor = true;
+            this.buttonLambda.Click += new System.EventHandler(this.buttonLambda_Click);
             // 
             // buttonNoLambda
             // 
-            this.buttonNoLambda.Location = new System.Drawing.Point(86, 167);
+            this.buttonNoLambda.Location = new System.Drawing.Point(214, 196);
             this.buttonNoLambda.Name = "buttonNoLambda";
             this.buttonNoLambda.Size = new System.Drawing.Size(75, 23);
             this.buttonNoLambda.TabIndex = 8;
             this.buttonNoLambda.Text = "NoLambda";
             this.buttonNoLambda.UseVisualStyleBackColor = true;
+            this.buttonNoLambda.Click += new System.EventHandler(this.buttonNoLambda_Click);
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(214, 225);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(120, 95);
+            this.listBox3.TabIndex = 9;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.buttonNoLambda);
             this.Controls.Add(this.buttonLambda);
             this.Controls.Add(this.label2);
@@ -149,6 +161,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonLambda;
         private System.Windows.Forms.Button buttonNoLambda;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }
 

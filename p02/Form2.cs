@@ -17,21 +17,28 @@ namespace p02
         {
             InitializeComponent();
         }
+        List<int> list = new List<int>();
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             int n = Convert.ToInt32(textBoxN.Text);
-            int k = Convert.ToInt32(textBoxK.Text);
-            List<int> list = new List<int>();
-            Random rnd = new Random();
-            for (int i = 0; i < n; i++)
-            {
-                list.Add(rnd.Next(-4, 21));
-            }
+            list = library.Generace(list, n);
             library.Vypis(list, listBox1);
-            library.SmazaniLambda(list, k);
-            library.Smazani(list, k);
-            library.DruheMaximum(out int max, out int maxI, list);
+        }
+
+        private void buttonLambda_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            int k = Convert.ToInt32(textBoxK.Text);
+            library.Vypis(library.SmazaniLambda(list, k), listBox2);
+        }
+
+        private void buttonNoLambda_Click(object sender, EventArgs e)
+        {
+            listBox3.Items.Clear();
+            int k = Convert.ToInt32(textBoxK.Text);
+            library.Vypis(library.Smazani(list, k), listBox3);
         }
     }
 }
