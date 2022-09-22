@@ -1,28 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClassLibrary1
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class library
     {
-        public static void Vypis(List<int> list, ListBox listbox)
+        /// <summary>
+        /// vypise list
+        /// </summary>
+        /// <param name="list">vypisovany list</param>
+        /// <param name="listbox">cileny listbox</param>
+        public static void Vypis(List<int> list, ListBox listbox)  //p02
         {
         for (int i = 0; i < list.Count; i++)
             {
                 listbox.Items.Add(list[i]);
             }
         }
-
+        /// <summary>
+        /// smaze prvky k pomoci lambda vyrazu
+        /// </summary>
+        /// <param name="list">vystupni list</param>
+        /// <param name="k">mazany prvek</param>
+        /// <returns>promazany list</returns>
         public static List<int> SmazaniLambda(List<int> list, int k)
         {
             list.RemoveAll(a => a == k);
             return list;
         }
-
+        /// <summary>
+        /// smaze prvky k bez lambda vyrazu
+        /// </summary>
+        /// <param name="list">vystupni list</param>
+        /// <param name="k">mazany prvek</param>
+        /// <returns>promazany list</returns>
         public static List<int> Smazani(List<int> list, int k)
         {
             while (list.Contains(k))
@@ -31,13 +50,18 @@ namespace ClassLibrary1
             }
             return list;
         }
-
-        public static void DruheMaximum(out int max, out int maxI, List<int> list)
+        /// <summary>
+        /// najde druhe maximum
+        /// </summary>
+        /// <param name="max2">druhe maximum</param>
+        /// <param name="max2I">index druheho maxima</param>
+        /// <param name="list">vstupni list</param>
+        public static void DruheMaximum(out int max2, out int max2I, List<int> list)
         {
-            max = -5;
-            maxI = 0;
-            int max2 = -5;
-            int max2I = 0;
+            int max = -5;
+            int maxI = 0;
+            max2 = -5;
+            max2I = 0;
             for (int i =0; i < list.Count; i++)
             {
                 if (list[i] >= max)
@@ -53,17 +77,34 @@ namespace ClassLibrary1
                     max2I = i;
                 }
             }
-            maxI = max2I;
         }
-        public static List<int> Generace(List<int> list, int n)
+        /// <summary>
+        /// generuje cela cisla do listu
+        /// </summary>
+        /// <param name="list">vstupni list</param>
+        /// <param name="n">pocet prvku</param>
+        /// <returns>vrati n prvku od -4 do 20</returns>
+        public static List<int> Generace(List<int> list, int n, int x, int y)
         {
             list = new List<int>();
             Random rnd = new Random();
             for (int i = 0; i < n; i++)
             {
-                list.Add(rnd.Next(-4, 21));
+                list.Add(rnd.Next(x, y));
             }
             return list;
+        }
+
+        public static int DruhyNejvetsi(List<int> pomocny, out int maxI)
+        {
+            int max;
+            int[] puvodni = new int[pomocny.Count];
+            pomocny.CopyTo(puvodni);
+            pomocny.Sort();
+            if (pomocny.Count >= 2) max = pomocny[pomocny.Count - 2];
+            else max = pomocny[0];
+            maxI = Array.IndexOf(puvodni, max);
+            return max;
         }
     }
 }

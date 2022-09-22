@@ -23,7 +23,7 @@ namespace p02
         {
             listBox1.Items.Clear();
             int n = Convert.ToInt32(textBoxN.Text);
-            list = library.Generace(list, n);
+            list = library.Generace(list, n, -4, 21);
             library.Vypis(list, listBox1);
         }
 
@@ -39,6 +39,13 @@ namespace p02
             listBox3.Items.Clear();
             int k = Convert.ToInt32(textBoxK.Text);
             library.Vypis(library.Smazani(list, k), listBox3);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            labelVysl.Text = "Výsledek";
+            library.DruheMaximum(out int max, out int maxI, list);
+            labelVysl.Text = String.Format("Druhé maximum je {0}[{1}]", max, maxI);
         }
     }
 }
