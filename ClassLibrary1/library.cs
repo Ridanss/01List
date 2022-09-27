@@ -95,6 +95,12 @@ namespace ClassLibrary1
             return list;
         }
 
+        /// <summary>
+        /// vrati druhe maximum
+        /// </summary>
+        /// <param name="pomocny">vrati serazeny vstupni list</param>
+        /// <param name="maxI">index druheho maxima</param>
+        /// <returns>druhe maximum</returns>
         public static int DruhyNejvetsi(ref List<int> pomocny, out int maxI)
         {
             int max;
@@ -105,6 +111,17 @@ namespace ClassLibrary1
             else max = pomocny[0];
             maxI = Array.IndexOf(puvodni, max);
             return max;
+        }
+
+        public static List<int> AritPosloupnost(int n ,int a1, int d)
+        {
+            List<int> list = new List<int>(n);
+            list[0] = a1;
+            for (int i = 1; i <= n; i++)
+            {
+                list.Add(list[i--] + d);
+            }
+            return list;
         }
     }
 }
