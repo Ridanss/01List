@@ -95,7 +95,7 @@ namespace ClassLibrary1
             return list;
         }
 
-        public static int DruhyNejvetsi(List<int> pomocny, out int maxI)
+        public static int DruhyNejvetsi(ref List<int> pomocny, out int maxI)
         {
             int max;
             int[] puvodni = new int[pomocny.Count];

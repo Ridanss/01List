@@ -28,7 +28,8 @@ namespace p03
                 list = library.Generace(list, n, -3, 7);
                 list.RemoveAll(a => a == 0);
                 library.Vypis(list, listBox1);
-                labelVysl.Text = String.Format("Druhe maximum je {0}[{1}]", library.DruhyNejvetsi(list, out int maxI), maxI);
+                labelVysl.Text = String.Format("Druhe maximum je {0}[{1}]", library.DruhyNejvetsi(ref list, out int maxI), maxI);
+                library.Vypis(list, listBox2);
             }
         }
     }
