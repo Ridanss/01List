@@ -1,6 +1,6 @@
 ﻿namespace p08
 {
-    partial class Form1
+    partial class Form8
     {
         /// <summary>
         /// Vyžaduje se proměnná návrháře.

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace p08
 {
-    internal static class Program
+    internal static class Program8
     {
         /// <summary>
         /// Hlavní vstupní bod aplikace.
@@ -16,7 +16,7 @@ namespace p08
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form8());
         }
     }
 }
