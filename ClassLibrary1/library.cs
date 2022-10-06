@@ -139,5 +139,37 @@ namespace ClassLibrary1
             }
             return list;
         }
+
+        public static List<double> GeoPosloupnost(int n, double a1, double a2)
+        {
+            double q = a2 / a1;
+            List<double> list = new List<double>();
+            list.Add(a1);
+            list.Add(a2);
+            for (int i = 2; i < n; i++)
+            {
+                a2 *= q;
+                list.Add(a2);
+            }
+            return list;
+        }
+
+        public static double GeoPoslSecist(int p, List<double> list)
+        {
+            double soucet = 0;
+            for (int i = 0; i < p; i++)
+            {
+                soucet += list[i];
+            }
+            return soucet;
+        }
+
+        public static void Vypis(List<double> list, ListBox listbox)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                listbox.Items.Add(list[i]);
+            }
+        }
     }
 }

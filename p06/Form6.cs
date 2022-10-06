@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,33 @@ namespace p06
         public Form6()
         {
             InitializeComponent();
+        }
+
+        private void buttonGenerate_Click(object sender, EventArgs e)
+        {
+            int n;
+            double a1, a2;
+            if (int.TryParse(textBoxN.Text, out n) && double.TryParse(textBoxA1.Text, out a1) && double.TryParse(textBoxA2.Text, out a2))
+            {
+                listBox1.Items.Clear();
+                List<double> list = library.GeoPosloupnost(n, a1, a2);
+                library.Vypis(list, listBox1);
+            }
+        }
+
+        private void buttonSoucet_Click(object sender, EventArgs e)
+        {
+            int p;
+            if (int.TryParse(textBoxP.Text, out p) && p <= listBox1.Items.Count)
+            {
+                List<double> list = new List<double>();
+                foreach(double item in listBox1.Items)
+                {
+                    list.Add(item);
+                }
+                double soucet = library.GeoPoslSecist(p, list);
+                labelSoucet.Text = String.Format("součet:\n{0}", soucet);
+            }
         }
     }
 }
