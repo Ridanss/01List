@@ -22,11 +22,9 @@ namespace p07
         {
             if (textBox1.Text != String.Empty)
             {
-                List<char> list = new List<char>();
-                foreach(string item in textBox1.Lines)
-                {
-                    list.Add(item[0]);
-                }
+                listBox1.Items.Clear();
+                listBox2.Items.Clear();
+                List<char> list = library.CharList(textBox1);
                 library.Vypis(list, listBox1);
                 library.Uprava(ref list);
                 library.Vypis(list, listBox2);

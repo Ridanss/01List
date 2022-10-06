@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace ClassLibrary1
 {
@@ -199,6 +201,16 @@ namespace ClassLibrary1
                 else if (char.IsLower(list[i]) && list[i] >= 'a' && list[i] <= 'z') list.Remove(list[i]);
                 else i++;
             }
+        }
+
+        public static List<char> CharList(TextBox box1)
+        {
+            List<char> list = new List<char>();
+            foreach (string item in box1.Lines)
+            {
+                list.Add(item[0]);
+            }
+            return list;
         }
     }
 }
