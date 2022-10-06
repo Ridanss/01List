@@ -118,16 +118,17 @@ namespace ClassLibrary1
         {
             List<int> list = new List<int>(n);
             list.Add(a1);
-            for (int i = 1; i <= n; i++)
+            for (int i = 1; i < n; i++)
             {
                 list.Add(list[i-1] + d);
             }
             return list;
         }
 
-        public static List<int> AritPoslPridat(int n, int d, int a1)
+        public static List<int> AritPoslPridat(int n, ref List<int> list)
         {
-            List<int> list = new List<int>();
+            int a1 = list[list.Count - 1];
+            int d = list[list.Count - 1] - list[list.Count - 2];
             if (n >= 2)
             {
                 for (int i = 0; i < n; i++)

@@ -33,15 +33,18 @@ namespace p05
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (listBox1.Items.Count > 2)
+            if (listBox1.Items.Count >= 2)
             {
                 if (textBoxAdd.Text != String.Empty)
                 {
-                    int length = listBox1.Items.Count;
+                    List<int> list = new List<int>();
+                    foreach(int item in listBox1.Items)
+                    {
+                        list.Add(item);
+                    }
                     int n = Convert.ToInt32(textBoxAdd.Text);
-                    int d = Convert.ToInt32(Convert.ToInt32(listBox1.Items[length - 1]) - Convert.ToInt32(listBox1.Items[length - 2]));
-                    int a1 = Convert.ToInt32(Convert.ToInt32(listBox1.Items[length - 1]));
-                    List<int> list = library.AritPoslPridat(n, d, a1);
+                    library.AritPoslPridat(n, ref list);
+                    listBox1.Items.Clear();
                     library.Vypis(list, listBox1);
                 }
             }
