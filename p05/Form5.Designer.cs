@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonN = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxA1 = new System.Windows.Forms.TextBox();
+            this.textBoxD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.textBoxAdd = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxN
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "5";
+            this.textBoxN.Location = new System.Drawing.Point(57, 33);
+            this.textBoxN.Name = "textBoxN";
+            this.textBoxN.Size = new System.Drawing.Size(100, 20);
+            this.textBoxN.TabIndex = 0;
+            this.textBoxN.Text = "5";
             // 
             // label1
             // 
@@ -65,21 +68,21 @@
             this.buttonN.UseVisualStyleBackColor = true;
             this.buttonN.Click += new System.EventHandler(this.buttonN_Click);
             // 
-            // textBox2
+            // textBoxA1
             // 
-            this.textBox2.Location = new System.Drawing.Point(57, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "3";
+            this.textBoxA1.Location = new System.Drawing.Point(57, 59);
+            this.textBoxA1.Name = "textBoxA1";
+            this.textBoxA1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxA1.TabIndex = 3;
+            this.textBoxA1.Text = "3";
             // 
-            // textBox3
+            // textBoxD
             // 
-            this.textBox3.Location = new System.Drawing.Point(57, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "4";
+            this.textBoxD.Location = new System.Drawing.Point(57, 85);
+            this.textBoxD.Name = "textBoxD";
+            this.textBoxD.Size = new System.Drawing.Size(100, 20);
+            this.textBoxD.TabIndex = 4;
+            this.textBoxD.Text = "4";
             // 
             // label2
             // 
@@ -107,19 +110,49 @@
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 7;
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(313, 111);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "přidat";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // textBoxAdd
+            // 
+            this.textBoxAdd.Location = new System.Drawing.Point(207, 113);
+            this.textBoxAdd.Name = "textBoxAdd";
+            this.textBoxAdd.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAdd.TabIndex = 9;
+            this.textBoxAdd.Text = "2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(185, 116);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "n:";
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(493, 268);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxAdd);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxD);
+            this.Controls.Add(this.textBoxA1);
             this.Controls.Add(this.buttonN);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxN);
             this.Name = "Form5";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -129,14 +162,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonN;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxA1;
+        private System.Windows.Forms.TextBox textBoxD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.TextBox textBoxAdd;
+        private System.Windows.Forms.Label label4;
     }
 }
 

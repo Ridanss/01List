@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace ClassLibrary1
 {
@@ -116,10 +117,24 @@ namespace ClassLibrary1
         public static List<int> AritPosloupnost(int n ,int a1, int d)
         {
             List<int> list = new List<int>(n);
-            list[0] = a1;
+            list.Add(a1);
             for (int i = 1; i <= n; i++)
             {
-                list.Add(list[i--] + d);
+                list.Add(list[i-1] + d);
+            }
+            return list;
+        }
+
+        public static List<int> AritPoslPridat(int n, int d, int a1)
+        {
+            List<int> list = new List<int>();
+            if (n >= 2)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    a1 += d;
+                    list.Add(a1);
+                }
             }
             return list;
         }
