@@ -33,15 +33,17 @@ namespace p06
         private void buttonSoucet_Click(object sender, EventArgs e)
         {
             int p;
-            if (int.TryParse(textBoxP.Text, out p) && p <= listBox1.Items.Count)
+            labelSoucet.Text = "součet:";
+            if (int.TryParse(textBoxP.Text, out p))
             {
                 List<double> list = new List<double>();
                 foreach(double item in listBox1.Items)
                 {
                     list.Add(item);
                 }
-                double soucet = library.GeoPoslSecist(p, list);
-                labelSoucet.Text = String.Format("součet:\n{0}", soucet);
+                bool possible = library.GeoPoslSecist(p, list, out double soucet);
+                if (possible) labelSoucet.Text = String.Format("součet:\n{0}", soucet);
+                else labelSoucet.Text = "součet:\nnebyl možný";
             }
         }
     }

@@ -26,6 +26,30 @@ namespace ClassLibrary1
                 listbox.Items.Add(list[i]);
             }
         }
+
+        public static void Vypis(List<double> list, ListBox listbox)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                listbox.Items.Add(list[i]);
+            }
+        }
+
+        public static void Vypis(List<string> list, ListBox listbox)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                listbox.Items.Add(list[i]);
+            }
+        }
+
+        public static void Vypis(List<char> list, ListBox listbox)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                listbox.Items.Add(list[i]);
+            }
+        }
         /// <summary>
         /// smaze prvky k pomoci lambda vyrazu
         /// </summary>
@@ -154,21 +178,26 @@ namespace ClassLibrary1
             return list;
         }
 
-        public static double GeoPoslSecist(int p, List<double> list)
+        public static bool GeoPoslSecist(int p, List<double> list, out double soucet)
         {
-            double soucet = 0;
+            soucet = 0;
+            if (p > list.Count) return false;
             for (int i = 0; i < p; i++)
             {
                 soucet += list[i];
             }
-            return soucet;
+            return true;
+            
         }
 
-        public static void Vypis(List<double> list, ListBox listbox)
+        public static void Uprava(ref List<char> list)
         {
-            for (int i = 0; i < list.Count; i++)
+            int i = 0;
+            while (i < list.Count)
             {
-                listbox.Items.Add(list[i]);
+                if (char.IsDigit(list[i])) list.Remove(list[i]);
+                else if (char.IsLower(list[i]) && list[i] >= 'a' && list[i] <= 'z') list.Remove(list[i]);
+                else i++;
             }
         }
     }
