@@ -45,13 +45,16 @@ namespace ClassLibrary1
             }
         }
 
-        public static void Vypis(List<char> list, ListBox listbox)
+        public static string Vypis(List<char> list)
         {
-            for (int i = 0; i < list.Count; i++)
+            string chain = string.Empty;
+            foreach(char c in list)
             {
-                listbox.Items.Add(list[i]);
+                chain += c;
             }
+            return chain;
         }
+
         /// <summary>
         /// smaze prvky k pomoci lambda vyrazu
         /// </summary>
@@ -236,6 +239,8 @@ namespace ClassLibrary1
             if (maxI >= 0 && minI >= 0) (list[maxI], list[minI]) = (list[minI], list[maxI]);
             return list;
         }
+
+
 
     }
 }
