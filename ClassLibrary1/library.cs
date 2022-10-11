@@ -216,15 +216,24 @@ namespace ClassLibrary1
         public static List<int> Prohozeni(List<int> list)
         {
             int min = 101, max = -101;
+            int minI = -1, maxI = -1;
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i] % 2 != 0 && list[i] % 3 == 0 && list[i] < min)
+                if (list[i] % 2 != 0)
                 {
-                    min = list[i];
+                    if (list[i] % 3 == 0 && list[i] < min)
+                    {
+                        min = list[i];
+                        minI = i;
+                    }
                 }
-                else if (list[i] % 2 == 0 && list[i] > max) max = list[i];
+                else if (list[i] > max)
+                {
+                    max = list[i];
+                    maxI = i;
+                }
             }
-            if (max > -101 && min < 101) (list[list.IndexOf(max)], list[list.IndexOf(min)]) = (list[list.IndexOf(min)], list[list.IndexOf(max)]);
+            if (maxI >= 0 && minI >= 0) (list[maxI], list[minI]) = (list[minI], list[maxI]);
             return list;
         }
 
